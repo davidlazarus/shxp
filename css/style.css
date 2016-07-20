@@ -19,6 +19,10 @@ html {
   background: -o-linear-gradient(top, #aeb0af, #f0f0f0);
 }
 
+*:focus {
+    outline: none;
+}
+
 .header {
 	margin-top: 50px;
 	height: 20px;
@@ -62,6 +66,37 @@ html {
 	-webkit-border-bottom-left-radius: 10px;
 
 }
+/* PLACE HOLDER STYLIN*/
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
+}
+
+/*stop*/
+
+input.inputname {
+	background-color: rgba(0, 0, 0, 0.0);
+	width: 290px;
+	height: 45px;
+	border: none;
+	float: right;
+	color: white;
+	text-align: right;
+	padding-top: 2px;
+}
+
 .plus {
 	width: 50px;
 	height: 50px;
