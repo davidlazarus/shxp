@@ -55,19 +55,6 @@ header {
 
 }
 
-.item-cat1, .item-cat2, .item-cat3, .item-cat4 {
-	width: 300px;
-	height: 50px;
-	border: 2px solid rgb(220,220,220);
-	float: right;
-	margin-top: 18px;
-	color: white;
-	text-align: right;
-	padding-right: 20px;
-	border-right: none;
-
-}
-
 .item-name, .item-cat {
 	border-right: none;
 }
@@ -87,7 +74,7 @@ header {
 
 /* padding drop down symbols*/
 
-.item-cat > .sub-menu, .sub-menu1, .sub-menu2, .sub-menu3, .sub-menu4 > li > i {
+.item-cat > .sub-menu > li > i {
 	padding-right: 5px;
 }
 /*bnk*/
@@ -99,7 +86,7 @@ header {
 }
 /* SUB MENU STYLING*/
 
-.sub-menu, .sub-menu1, .sub-menu2, .sub-menu3, .sub-menu4 {
+.sub-menu {
 	list-style-type: none;
 	background-color: rgb(170,170,170);
 	text-align: center;
@@ -114,7 +101,7 @@ header {
 	-webkit-border-bottom-right-radius: 10px;
 	-webkit-border-bottom-left-radius: 10px;
 	box-shadow:0px 2px 3px rgba(0,0,0,0.2);
-	opacity: 0;
+	display: none;
 }
 /*bnk*/ 
 
@@ -127,37 +114,6 @@ header {
     color: #D4C5B7;
 }
 
-.item-cat1 > .sub-menu > li:hover {
-    color: rgba(255,255,255,0.6);
-}
-
-.item-cat1 > .sub-menu > li:hover > i {
-    color: #D4C5B7;
-}
-
-.item-cat2 > .sub-menu > li:hover {
-    color: rgba(255,255,255,0.6);
-}
-
-.item-cat2 > .sub-menu > li:hover > i {
-    color: #D4C5B7;
-}
-
-.item-cat3 > .sub-menu > li:hover {
-    color: rgba(255,255,255,0.6);
-}
-
-.item-cat3 > .sub-menu > li:hover > i {
-    color: #D4C5B7;
-}
-
-.item-cat4 > .sub-menu > li:hover {
-    color: rgba(255,255,255,0.6);
-}
-
-.item-cat4 > .sub-menu > li:hover > i {
-    color: #D4C5B7;
-}
 /* stylin' the hover of + */
 
 .plus:hover {
