@@ -6,7 +6,7 @@ var dropdShow;
 
 function showSubMenu()
  {
-  $('.sub-menu').show();
+  $('.sub-menu').fadeIn('slow');
   dropdShow = true;
  }
 
@@ -59,6 +59,19 @@ function clickonplus()
 	});
 }
 
+function inputrequired() 
+{
+	if (textinput) 
+	{
+		clickonplus();
+	}
+	else 
+	{
+		clickDropDown();
+	}
+
+
+}
 
 
 /*LIST OF FUNCTIONS THAT ARE BEING EXECUTED*/
@@ -68,6 +81,7 @@ $(document).ready(function() {
 	clickDropDown();
   	listenSelectCat();
   	clickonplus();
+  	inputrequired();
 
 });
 

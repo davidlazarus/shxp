@@ -64,11 +64,13 @@ header {
 
 .item-cat > p > i {
 	padding-left: 10px;
+	padding-right: 10px;
 	transition: all 0.5s ease 0.1s;
 }
 
 .item-cat > p:hover > i {
 	color: #D4C5B7;
+	cursor: pointer;
 }
 /*bnk*/
 
@@ -105,13 +107,19 @@ header {
 }
 /*bnk*/ 
 
+.item-cat:hover {
+	cursor: pointer;
+}
+
 /* stylin' the hover of sub-menu*/
 .item-cat > .sub-menu > li:hover {
     color: rgba(255,255,255,0.6);
+    cursor: pointer;
 }
 
 .item-cat > .sub-menu > li:hover > i {
     color: #D4C5B7;
+    cursor: pointer;
 }
 
 /* stylin' the hover of + */
@@ -119,6 +127,8 @@ header {
 .plus:hover {
 	
 	background-color: rgba(255,255,255,0.6);
+	color: #D4C5B7;
+	cursor: pointer;
 	
 /* property name | duration | timing function | delay */
 }
