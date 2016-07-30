@@ -3,6 +3,7 @@
 var dropdSelectValsymbol;
 var dropdSelectVal;
 var dropdShow;
+var totalinput;
 
 function showSubMenu()
  {
@@ -18,7 +19,7 @@ function hideSubMenu()
 
 function clickDropDown()
  {
-  $(".item-cat p").on("click", function(e)
+  $('.item-cat p').on('click', function(e)
   {
     if(dropdShow)
     {
@@ -38,7 +39,7 @@ function fillItemCategory(val)
 
 function listenSelectCat()
  {
-  $(".sub-menu li").on('click', function()
+  $('.sub-menu li').on('click', function()
   {
     hideSubMenu();
     dropdSelectVal = $(this).html();
@@ -59,18 +60,29 @@ function clickonplus()
 	});
 }
 
+
+function clickfail()
+{
+	$('.plus').on('click', function()
+		{
+			alert("Please enter a Name and Pick a Category");
+		});
+}
+
+
 function inputrequired() 
 {
-	if (textinput) 
+	$('.plus').on('click', function(e)
 	{
-		clickonplus();
+	if ($('totalinput').val().length !='')
+	{
+		clickfail();
 	}
 	else 
 	{
-		clickDropDown();
+		clickonplus();
 	}
-
-
+	});
 }
 
 
@@ -80,7 +92,6 @@ $(document).ready(function() {
 
 	clickDropDown();
   	listenSelectCat();
-  	clickonplus();
   	inputrequired();
 
 });
