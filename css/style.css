@@ -41,6 +41,12 @@ header {
 	margin-left: 100px;
 	float: left;
 
+
+}
+
+.logo:hover {
+	opacity: 0.6;
+    cursor: pointer;
 }
 
 .item-cat, .item-name {
