@@ -72,6 +72,7 @@ function clickonplus()
 		else
 		{
 			$('ul.need-items2').append(yes+no+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+totalinput+"<br/>");
+			yes = $(this).attr('id', 'newyes');
 		}
 
 		});
@@ -79,7 +80,7 @@ function clickonplus()
 
 function gotem()
 {	/* Its this part that I can't figure out - how to target the 'yes' (check) element that i've appended just above*/
-	$('ul.need-items2 .fa.fa-check').on('click', function()
+	$('ul.need-items2 i#newyes').on('click', function()
 	{
 		gotitem = $(this).parent();
 		console.log(gotitem);
