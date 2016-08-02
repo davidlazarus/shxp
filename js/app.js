@@ -5,6 +5,13 @@ var dropdSelectVal;
 var dropdShow;
 var totalinput;
 var textinput;
+var yes = $('.yes').html();
+var no = $('.no').html();
+var gotitem;
+
+
+$('#yes').hide();
+$('.no').hide();
 
 function showSubMenu()
  {
@@ -51,24 +58,35 @@ function listenSelectCat()
   });
  }
 
+
 function clickonplus()
 {
 	$('.plus').on('click', function()
 	{
 		textinput = $('input').val();
    		totalinput = textinput + dropdSelectValsymbol;
-		
 
 		if (textinput=='' || dropdSelectValsymbol==undefined) {
-			alert("Please enter a Name and Pick a Category");
+			alert("Please Enter a Name & Pick a Category");
 		}
 		else
 		{
-			$('ul.need-items').append(totalinput);
+			$('ul.need-items2').append(yes+no+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+totalinput+"<br/>");
 		}
 
 		});
 }
+
+function gotem()
+{	/* Its this part that I can't figure out - how to target the 'yes' (check) element that i've appended just above*/
+	$('ul.need-items2 .fa.fa-check').on('click', function()
+	{
+		gotitem = $(this).parent();
+		console.log(gotitem);
+		$('ul.got-items2').append(gotitem);
+	});
+}
+
 
 function refresh()
 {
@@ -79,11 +97,14 @@ function refresh()
 
 }
 
+
+
 $(document).ready(function() {
 
 	clickDropDown();
   	listenSelectCat();
   	clickonplus();
+  	gotem();
   	refresh();
 
 });

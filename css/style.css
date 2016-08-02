@@ -40,6 +40,7 @@ header {
 	width: 110px;
 	margin-left: 100px;
 	float: left;
+	transition: all 0.4s ease 0.1s;
 
 
 }
@@ -47,6 +48,7 @@ header {
 .logo:hover {
 	opacity: 0.6;
     cursor: pointer;
+
 }
 
 .item-cat, .item-name {
@@ -224,6 +226,21 @@ input.inputname {
 	-webkit-border-top-left-radius: 10px;
 }
 
+
+i.fa.fa-check, i.fa.fa-times {
+	color: rgba(0,0,0,0.1);
+	transition: all 0.5s ease 0.1s;
+	cursor: pointer;
+}
+
+i.fa.fa-check:hover {
+	color: green;
+}
+
+i.fa.fa-times:hover {
+	color: red;
+}
+
 .title {
 	display: flex;
 	justify-content: space-around;
@@ -265,6 +282,26 @@ input.inputname {
 	-webkit-border-bottom-left-radius: 0px;
 	-webkit-border-top-right-radius: 10px;
 	-webkit-border-top-left-radius: 10px;
+}
+
+ul.need-items2, ul.got-items2 {
+	text-align: center;
+	font-size: 15px;
+    font-weight: bold;
+    line-height: 220%;
+    height: 280px;
+    margin-top: 13px;
+	overflow: scroll;
+	list-style-type: none;
+	margin-right: 110px;
+
+    
+}
+
+ul.need-items2 > i {
+	
+	margin-left: 10px;
+	
 }
 
 footer {
