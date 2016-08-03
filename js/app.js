@@ -75,6 +75,7 @@ function clickonplus()
 		$('input').val('');
 		
 	  checkListener();
+	  crossListener();
 	  
 	});
 }
@@ -83,22 +84,34 @@ function checkListener()
 {
   $('ul.need-items2 i.fa.fa-check').on('click', function(e)
     {
-      var dad = $(this).parent();
-      console.log(dad);
-     
+      var dadObj = $(this).parent()
+      var dadHtml = dadObj[0].outerHTML;
 
-      $('ul.got-items2').append(dad); 
-      /*$('ul.got-items2 .fa.fa-check').remove();
-      $('ul.got-items2 .fa.fa-times').remove();*/
+      console.log(dadObj);
+
+      dadObj.remove();
+      
+      $('ul.got-items2').append(dadHtml); 
+      $('ul.got-items2 .fa.fa-check').remove();
+      $('ul.got-items2 .fa.fa-times').remove();
      clickListener();
     });
 }
 
+function crossListener()
+{
+	$('ul.need-items2 i.fa.fa-times').on('click', function(e)
+	{
+		var cross = $(this).parent()
+		cross.remove();
+	});
+}
+
+
 function clickListener()
 {
-	$('ul.got-items2 li').on('click', function()
-	{
-		console.log($(this));
+	$('ul.got-items2 li').on('click', function(e)
+	{	
 		$(this).remove();
 		
 	});
