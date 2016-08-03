@@ -161,6 +161,29 @@ header {
 }
 /*bank*/
 
+.wspace
+{
+	padding-left: 40px;
+}
+
+.wspace1, .wspace2
+{
+	padding-left: 10px;
+}
+
+.got-items2 > li {
+
+	padding-left: 40px;
+	color: darkgrey;
+	transition: all 0.5s ease 0.1s;
+}
+
+.got-items2 > li:hover {
+
+	color: rgb(76,76,76);
+	cursor: pointer;
+}
+
 input.inputname {
 	background-color: rgba(0, 0, 0, 0.0);
 	width: 290px;

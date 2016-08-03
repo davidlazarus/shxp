@@ -58,30 +58,52 @@ function clickonplus()
 	{
 		textinput = $('input').val();
 		mediuminput = textinput + dropdSelectValsymbol;
-   	totalinput = '<i id="yes" class="fa fa-check"></i>' + '<i id="no" class="fa fa-times"></i>' + "&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp" + textinput + dropdSelectValsymbol;
+   		totalinput = '<i id="yes" class="fa fa-check"><span class="wspace1"></span></i>'
+      	+ '<i id="no" class="fa fa-times"></i><span class="wspace">'
+     	+ textinput
+     	+ '</span><span class="wspace2"></span>'
+     	+ dropdSelectValsymbol;
 
 		if (textinput=='' || dropdSelectValsymbol==undefined) {
 			alert("Please Enter a Name & Pick a Category");
 		}
 		else
 		{
-
-			$('ul.need-items2').append(totalinput+"<br/>");
+			$('ul.need-items2').append("<li>" + totalinput + "<li/>");
 		}
 
 		$('input').val('');
-
-		$('ul.need-items2 i.fa.fa-check').on('click', function(e)
-		{
-			$('ul.got-items2').append(mediuminput + '<br/>'); 
-      var toRemove =  $(this);
-      var allinput = $(this).nextAll();
-    	toRemove.remove();
-      allinput.remove();				
-
-		});
+		
+	  checkListener();
+	  
 	});
 }
+
+function checkListener()
+{
+  $('ul.need-items2 i.fa.fa-check').on('click', function(e)
+    {
+      var dad = $(this).parent();
+      console.log(dad);
+     
+
+      $('ul.got-items2').append(dad); 
+      /*$('ul.got-items2 .fa.fa-check').remove();
+      $('ul.got-items2 .fa.fa-times').remove();*/
+     clickListener();
+    });
+}
+
+function clickListener()
+{
+	$('ul.got-items2 li').on('click', function()
+	{
+		console.log($(this));
+		$(this).remove();
+		
+	});
+}
+
 
 
 function refresh()
