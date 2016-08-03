@@ -5,13 +5,8 @@ var dropdSelectVal;
 var dropdShow;
 var totalinput;
 var textinput;
-var yes = $('.yes').html();
-var no = $('.no').html();
 var gotitem;
 
-
-$('#yes').hide();
-$('.no').hide();
 
 function showSubMenu()
  {
@@ -52,8 +47,6 @@ function listenSelectCat()
     hideSubMenu();
     dropdSelectVal = $(this).html();
     dropdSelectValsymbol = $(this).children('i')[0].outerHTML;
-    console.log(dropdSelectVal);
-    console.log(dropdSelectValsymbol);
     fillItemCategory(dropdSelectVal);
   });
  }
@@ -64,27 +57,29 @@ function clickonplus()
 	$('.plus').on('click', function()
 	{
 		textinput = $('input').val();
-   		totalinput = textinput + dropdSelectValsymbol;
+		mediuminput = textinput + dropdSelectValsymbol;
+   	totalinput = '<i id="yes" class="fa fa-check"></i>' + '<i id="no" class="fa fa-times"></i>' + "&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp" + textinput + dropdSelectValsymbol;
 
 		if (textinput=='' || dropdSelectValsymbol==undefined) {
 			alert("Please Enter a Name & Pick a Category");
 		}
 		else
 		{
-			$('ul.need-items2').append(yes+no+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+totalinput+"<br/>");
-			yes = $(this).attr('id', 'newyes');
+
+			$('ul.need-items2').append(totalinput+"<br/>");
 		}
 
-		});
-}
+		$('input').val('');
 
-function gotem()
-{	/* Its this part that I can't figure out - how to target the 'yes' (check) element that i've appended just above*/
-	$('ul.need-items2 i#newyes').on('click', function()
-	{
-		gotitem = $(this).parent();
-		console.log(gotitem);
-		$('ul.got-items2').append(gotitem);
+		$('ul.need-items2 i.fa.fa-check').on('click', function(e)
+		{
+			$('ul.got-items2').append(mediuminput + '<br/>'); 
+      var toRemove =  $(this);
+      var allinput = $(this).nextAll();
+    	toRemove.remove();
+      allinput.remove();				
+
+		});
 	});
 }
 
@@ -95,7 +90,6 @@ function refresh()
 	{
 		window.location.reload();
 	});
-
 }
 
 
@@ -105,17 +99,6 @@ $(document).ready(function() {
 	clickDropDown();
   	listenSelectCat();
   	clickonplus();
-  	gotem();
   	refresh();
 
 });
-
-
-
-
-
-
-
-
-
-
