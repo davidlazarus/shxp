@@ -51,6 +51,13 @@ function listenSelectCat()
   });
  }
 
+function clickinput()
+{
+	$('.inputname').on('click', function()
+	{
+		$('input').val('');
+	});
+}
 
 function clickonplus()
 {
@@ -71,8 +78,6 @@ function clickonplus()
 		{
 			$('ul.need-items2').append("<li>" + totalinput + "<li/>");
 		}
-
-		$('input').val('');
 		
 	  checkListener();
 	  crossListener();
@@ -82,6 +87,7 @@ function clickonplus()
 
 function checkListener()
 {
+  $('ul.need-items2 i.fa.fa-check').unbind("click");
   $('ul.need-items2 i.fa.fa-check').on('click', function(e)
     {
       var dadObj = $(this).parent()
@@ -100,6 +106,7 @@ function checkListener()
 
 function crossListener()
 {
+  $('ul.need-items2 i.fa.fa-times').unbind('click');
 	$('ul.need-items2 i.fa.fa-times').on('click', function(e)
 	{
 		var cross = $(this).parent()
@@ -110,6 +117,7 @@ function crossListener()
 
 function clickListener()
 {
+  $('ul.got-items2 li').unbind('click');
 	$('ul.got-items2 li').on('click', function(e)
 	{	
 		$(this).remove();
@@ -135,5 +143,6 @@ $(document).ready(function() {
   	listenSelectCat();
   	clickonplus();
   	refresh();
+  	clickinput();
 
 });
